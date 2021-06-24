@@ -5,7 +5,7 @@
 use App\Classes\Theme\Metronic;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Crypt;
-use Spatie\Permission\Models\Permission;
+use App\Models\Permission;
 use Illuminate\Support\Str;
 
 function welcome_word() {

@@ -1,19 +1,18 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', 'middleware' => ['auth:sanctum']], function () {
+    // Currency
+    Route::apiResource('currencies', 'CurrencyApiController');
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+    // Transaction Type
+    Route::apiResource('transaction-types', 'TransactionTypeApiController');
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+    // Income Source
+    Route::apiResource('income-sources', 'IncomeSourceApiController');
+
+    // Client Status
+    Route::apiResource('client-statuses', 'ClientStatusApiController');
+
+    // Project Status
+    Route::apiResource('project-statuses', 'ProjectStatusApiController');
 });

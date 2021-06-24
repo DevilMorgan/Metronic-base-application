@@ -12,8 +12,8 @@ class UserRequest extends FormRequest
      * @return bool
      */
     public function authorize()
-    { 
-        return true;
+   {
+        return Gate::allows('user_edit');
     }
 
     /**
@@ -24,10 +24,25 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'      => 'required',
-            'email'     => 'required|email|unique:users,email',
-            'password'  => 'required|same:confirm-password',
-            'roles'     => 'required'
+            'name' => [
+                'string',
+                'required',
+            ],
+            'email' => [
+                'required',
+                'unique:users,email,' . request()->route('user')->id,
+            ],
+            'username' => [
+                'string',
+                'nullable',
+            ],
+            'roles.*' => [
+                'integer',
+            ],
+            'roles' => [
+                'required',
+                'array',
+            ],
         ];
     }
 }

@@ -3,15 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Auth\Events\Registered;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -37,66 +33,58 @@ class RegisterController extends Controller
 
     /**
      * Create a new controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
         $this->middleware('guest');
     }
 
+    public function showRegistrationForm()
+    {
+        if (request()->has('signature') && !request()->hasValidSignature()) {
+            return redirect()->route('register');
+        }
+
+        return view('auth.register');
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name'      => ['required', 'string', 'max:255'],
-            'email'     => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password'  => ['required', 'string', 'min:8', 'confirmed'],
+            'name'     => ['required', 'string', 'max:255'],
+            'email'    => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
-     * @return \App\Models\User
+     * @return \App\User
      */
     protected function create(array $data)
     {
-        $username   = Str::slug($data['name'], '');
-        return User::create([
-            'name'      => $data['name'],
-            'username'  => $username,
-            'email'     => $data['email'],
-            'password'  => Hash::make($data['password']),
+        $user = User::create([
+            'name'     => $data['name'],
+            'email'    => $data['email'],
+            'password' => Hash::make($data['password']),
+            'team_id'  => request()->input('team', null),
         ]);
-    }
 
-    public function register(Request $request)
-    {
-        $this->validator($request->all())->validate();
+        if (!request()->has('team')) {
+            $team = \App\Models\Team::create([
+                'owner_id' => $user->id,
+                'name'     => $data['email'],
+            ]);
 
-        event(new Registered($user = $this->create($request->all())));
-        $user->assignRole('user-register');
-        // $this->guard()->login($user);
-
-        if ($response = $this->registered($request, $user)) {
-            return $response;
+            $user->update(['team_id' => $team->id]);
         }
 
-
-        $msg = 'Successfully registered!, contact admin for activate your account';
-        $notification = toaster($msg, 'success', 'Success!');
-        // toast($msg,'error');
-        // Alert::error('Oops!', $msg);
-        return redirect()->back()->with($notification);
-        // return $request->wantsJson()
-        //             ? new JsonResponse([], 201)
-        //             : redirect($this->redirectPath());
+        return $user;
     }
 }
