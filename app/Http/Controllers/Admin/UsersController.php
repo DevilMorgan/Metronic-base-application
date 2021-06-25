@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Classes\Theme\Metronic;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyUserRequest;
 use App\Http\Requests\StoreUserRequest;
@@ -13,29 +12,9 @@ use App\Models\User;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Support\Facades\Crypt;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\DB as FacadesDB;
-use Illuminate\Support\Facades\Hash as FacadesHash;
-use Yajra\DataTables\Facades\DataTables as FacadesDataTables;
 
 class UsersController extends Controller
 {
-
-	    private $page_title         = "Users";
-    private $page_description   = "Management User";
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-        $this->middleware('permission:user.index|user.create|user.edit|user.delete', ['only' => ['index','store']]);
-        $this->middleware('permission:user.create', ['only' => ['create','store']]);
-        $this->middleware('permission:user.edit',   ['only' => ['edit','update']]);
-        $this->middleware('permission:user.delete', ['only' => ['destroy']]);
-
-    }
-
-
     public function index()
     {
         abort_if(Gate::denies('user_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
@@ -89,7 +68,7 @@ class UsersController extends Controller
     {
         abort_if(Gate::denies('user_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $user->load('roles', 'team', 'ownerTeams');
+        $user->load('roles', 'team', 'userUserAlerts');
 
         return view('admin.users.show', compact('user'));
     }

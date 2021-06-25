@@ -3,17 +3,17 @@
 namespace App\Models;
 
 use \DateTimeInterface;
-use App\Traits\MultiTenantModelTrait;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Task extends Model implements HasMedia
 {
-    use MultiTenantModelTrait;
+    use SoftDeletes;
     use InteractsWithMedia;
     use HasFactory;
 
@@ -39,7 +39,6 @@ class Task extends Model implements HasMedia
         'created_at',
         'updated_at',
         'deleted_at',
-        'team_id',
     ];
 
     public function registerMediaConversions(Media $media = null): void
@@ -76,11 +75,6 @@ class Task extends Model implements HasMedia
     public function assigned_to()
     {
         return $this->belongsTo(User::class, 'assigned_to_id');
-    }
-
-    public function team()
-    {
-        return $this->belongsTo(Team::class, 'team_id');
     }
 
     protected function serializeDate(DateTimeInterface $date)

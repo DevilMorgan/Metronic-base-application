@@ -17,7 +17,7 @@ class TaskStatusController extends Controller
     {
         abort_if(Gate::denies('task_status_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $taskStatuses = TaskStatus::with(['team'])->get();
+        $taskStatuses = TaskStatus::all();
 
         return view('admin.taskStatuses.index', compact('taskStatuses'));
     }
@@ -40,8 +40,6 @@ class TaskStatusController extends Controller
     {
         abort_if(Gate::denies('task_status_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $taskStatus->load('team');
-
         return view('admin.taskStatuses.edit', compact('taskStatus'));
     }
 
@@ -55,8 +53,6 @@ class TaskStatusController extends Controller
     public function show(TaskStatus $taskStatus)
     {
         abort_if(Gate::denies('task_status_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
-        $taskStatus->load('team');
 
         return view('admin.taskStatuses.show', compact('taskStatus'));
     }

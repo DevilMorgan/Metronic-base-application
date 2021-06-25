@@ -9,24 +9,22 @@ class HomeController
     public function index()
     {
         $settings1 = [
-            'chart_title'           => 'Son Oluşturulan Aboneler',
+            'chart_title'           => 'Son Eklenen AP\'ler',
             'chart_type'            => 'latest_entries',
             'report_type'           => 'group_by_date',
-            'model'                 => 'App\Models\CrmCustomer',
-            'group_by_field'        => 'created_at',
-            'group_by_period'       => 'week',
+            'model'                 => 'App\Models\ApManagement',
+            'group_by_field'        => 'ap_installation_date',
+            'group_by_period'       => 'day',
             'aggregate_function'    => 'count',
             'filter_field'          => 'created_at',
-            'filter_days'           => '7',
-            'group_by_field_format' => 'd/m/Y H:i:s',
-            'column_class'          => 'col-md-4',
-            'entries_number'        => '20',
+            'group_by_field_format' => 'd/m/Y',
+            'column_class'          => 'col-md-3',
+            'entries_number'        => '5',
             'fields'                => [
-                'first_name' => '',
-                'last_name'  => '',
-                'team'       => 'name',
+                'ap_name'       => '',
+                'ap_ip_address' => '',
             ],
-            'translation_key' => 'crmCustomer',
+            'translation_key' => 'apManagement',
         ];
 
         $settings1['data'] = [];
@@ -40,24 +38,6 @@ class HomeController
             $settings1['fields'] = [];
         }
 
-        $settings2 = [
-            'chart_title'           => 'AP Performansı',
-            'chart_type'            => 'bar',
-            'report_type'           => 'group_by_date',
-            'model'                 => 'App\Models\Asset',
-            'group_by_field'        => 'created_at',
-            'group_by_period'       => 'month',
-            'aggregate_function'    => 'count',
-            'filter_field'          => 'created_at',
-            'filter_days'           => '14',
-            'group_by_field_format' => 'd/m/Y H:i:s',
-            'column_class'          => 'col-md-12',
-            'entries_number'        => '5',
-            'translation_key'       => 'asset',
-        ];
-
-        $chart2 = new LaravelChart($settings2);
-
-        return view('home', compact('settings1', 'chart2'));
+        return view('home', compact('settings1'));
     }
 }

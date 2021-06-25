@@ -17,7 +17,7 @@ class TaskTagController extends Controller
     {
         abort_if(Gate::denies('task_tag_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $taskTags = TaskTag::with(['team'])->get();
+        $taskTags = TaskTag::all();
 
         return view('admin.taskTags.index', compact('taskTags'));
     }
@@ -40,8 +40,6 @@ class TaskTagController extends Controller
     {
         abort_if(Gate::denies('task_tag_edit'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $taskTag->load('team');
-
         return view('admin.taskTags.edit', compact('taskTag'));
     }
 
@@ -55,8 +53,6 @@ class TaskTagController extends Controller
     public function show(TaskTag $taskTag)
     {
         abort_if(Gate::denies('task_tag_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-
-        $taskTag->load('team');
 
         return view('admin.taskTags.show', compact('taskTag'));
     }

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Classes\Theme\Metronic;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MassDestroyPermissionRequest;
 use App\Http\Requests\StorePermissionRequest;
@@ -11,27 +10,9 @@ use App\Models\Permission;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use DataTables;
-use Illuminate\Support\Facades\Crypt;
-use Illuminate\Support\Facades\DB;
-
 
 class PermissionsController extends Controller
 {
-
-	    private $page_title         = "Permissions";
-    private $page_description   = "Permission Management";
-
-    function __construct()
-    {
-        $this->middleware('auth');
-        $this->middleware('permissions:permission.index|permission.create|permission.edit|permission.delete', ['only' => ['index','store']]);
-        $this->middleware('permissions:permission.create',   ['only' => ['create','store']]);
-        $this->middleware('permissions:permission.edit',     ['only' => ['edit','update']]);
-        $this->middleware('permissions:permission.delete',   ['only' => ['destroy']]);
-    }
-
-
     public function index()
     {
         abort_if(Gate::denies('permission_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');

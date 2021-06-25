@@ -80,598 +80,378 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id'    => 18,
-                'title' => 'team_create',
+                'title' => 'user_alert_create',
             ],
             [
                 'id'    => 19,
-                'title' => 'team_edit',
+                'title' => 'user_alert_show',
             ],
             [
                 'id'    => 20,
-                'title' => 'team_show',
+                'title' => 'user_alert_delete',
             ],
             [
                 'id'    => 21,
-                'title' => 'team_delete',
+                'title' => 'user_alert_access',
             ],
             [
                 'id'    => 22,
-                'title' => 'team_access',
+                'title' => 'ap_management_create',
             ],
             [
                 'id'    => 23,
-                'title' => 'basic_c_r_m_access',
+                'title' => 'ap_management_edit',
             ],
             [
                 'id'    => 24,
-                'title' => 'crm_status_create',
+                'title' => 'ap_management_show',
             ],
             [
                 'id'    => 25,
-                'title' => 'crm_status_edit',
+                'title' => 'ap_management_delete',
             ],
             [
                 'id'    => 26,
-                'title' => 'crm_status_show',
+                'title' => 'ap_management_access',
             ],
             [
                 'id'    => 27,
-                'title' => 'crm_status_delete',
+                'title' => 'station_management_create',
             ],
             [
                 'id'    => 28,
-                'title' => 'crm_status_access',
+                'title' => 'station_management_edit',
             ],
             [
                 'id'    => 29,
-                'title' => 'crm_customer_create',
+                'title' => 'station_management_show',
             ],
             [
                 'id'    => 30,
-                'title' => 'crm_customer_edit',
+                'title' => 'station_management_delete',
             ],
             [
                 'id'    => 31,
-                'title' => 'crm_customer_show',
+                'title' => 'station_management_access',
             ],
             [
                 'id'    => 32,
-                'title' => 'crm_customer_delete',
+                'title' => 'abonelik_islemleri_access',
             ],
             [
                 'id'    => 33,
-                'title' => 'crm_customer_access',
+                'title' => 'musteriler_create',
             ],
             [
                 'id'    => 34,
-                'title' => 'crm_note_create',
+                'title' => 'musteriler_edit',
             ],
             [
                 'id'    => 35,
-                'title' => 'crm_note_edit',
+                'title' => 'musteriler_show',
             ],
             [
                 'id'    => 36,
-                'title' => 'crm_note_show',
+                'title' => 'musteriler_delete',
             ],
             [
                 'id'    => 37,
-                'title' => 'crm_note_delete',
+                'title' => 'musteriler_access',
             ],
             [
                 'id'    => 38,
-                'title' => 'crm_note_access',
+                'title' => 'network_yonetimi_access',
             ],
             [
                 'id'    => 39,
-                'title' => 'crm_document_create',
+                'title' => 'station_yonet_access',
             ],
             [
                 'id'    => 40,
-                'title' => 'crm_document_edit',
+                'title' => 'ap_yonetimi_access',
             ],
             [
                 'id'    => 41,
-                'title' => 'crm_document_show',
+                'title' => 'nas_yonetimi_access',
             ],
             [
                 'id'    => 42,
-                'title' => 'crm_document_delete',
+                'title' => 'signalccq_management_access',
             ],
             [
                 'id'    => 43,
-                'title' => 'crm_document_access',
+                'title' => 'acs_server_management_access',
             ],
             [
                 'id'    => 44,
-                'title' => 'asset_management_access',
+                'title' => 'station_raporlari_access',
             ],
             [
                 'id'    => 45,
-                'title' => 'asset_category_create',
+                'title' => 'switch_management_access',
             ],
             [
                 'id'    => 46,
-                'title' => 'asset_category_edit',
+                'title' => 'switch_list_create',
             ],
             [
                 'id'    => 47,
-                'title' => 'asset_category_show',
+                'title' => 'switch_list_edit',
             ],
             [
                 'id'    => 48,
-                'title' => 'asset_category_delete',
+                'title' => 'switch_list_show',
             ],
             [
                 'id'    => 49,
-                'title' => 'asset_category_access',
+                'title' => 'switch_list_delete',
             ],
             [
                 'id'    => 50,
-                'title' => 'asset_location_create',
+                'title' => 'switch_list_access',
             ],
             [
                 'id'    => 51,
-                'title' => 'asset_location_edit',
+                'title' => 'speed_test_management_access',
             ],
             [
                 'id'    => 52,
-                'title' => 'asset_location_show',
+                'title' => 'switch_yonet_access',
             ],
             [
                 'id'    => 53,
-                'title' => 'asset_location_delete',
+                'title' => 'speed_test_raporlari_access',
             ],
             [
                 'id'    => 54,
-                'title' => 'asset_location_access',
+                'title' => 'device_management_create',
             ],
             [
                 'id'    => 55,
-                'title' => 'asset_status_create',
+                'title' => 'device_management_edit',
             ],
             [
                 'id'    => 56,
-                'title' => 'asset_status_edit',
+                'title' => 'device_management_show',
             ],
             [
                 'id'    => 57,
-                'title' => 'asset_status_show',
+                'title' => 'device_management_delete',
             ],
             [
                 'id'    => 58,
-                'title' => 'asset_status_delete',
+                'title' => 'device_management_access',
             ],
             [
                 'id'    => 59,
-                'title' => 'asset_status_access',
+                'title' => 'team_create',
             ],
             [
                 'id'    => 60,
-                'title' => 'asset_create',
+                'title' => 'team_edit',
             ],
             [
                 'id'    => 61,
-                'title' => 'asset_edit',
+                'title' => 'team_show',
             ],
             [
                 'id'    => 62,
-                'title' => 'asset_show',
+                'title' => 'team_delete',
             ],
             [
                 'id'    => 63,
-                'title' => 'asset_delete',
+                'title' => 'team_access',
             ],
             [
                 'id'    => 64,
-                'title' => 'asset_access',
+                'title' => 'ipam_managed_access',
             ],
             [
                 'id'    => 65,
-                'title' => 'assets_history_access',
+                'title' => 'subnet_management_create',
             ],
             [
                 'id'    => 66,
-                'title' => 'baglanti_testi_create',
+                'title' => 'subnet_management_edit',
             ],
             [
                 'id'    => 67,
-                'title' => 'baglanti_testi_edit',
+                'title' => 'subnet_management_show',
             ],
             [
                 'id'    => 68,
-                'title' => 'baglanti_testi_show',
+                'title' => 'subnet_management_delete',
             ],
             [
                 'id'    => 69,
-                'title' => 'baglanti_testi_delete',
+                'title' => 'subnet_management_access',
             ],
             [
                 'id'    => 70,
-                'title' => 'baglanti_testi_access',
+                'title' => 'pool_management_radiu_create',
             ],
             [
                 'id'    => 71,
-                'title' => 'network_alert_create',
+                'title' => 'pool_management_radiu_edit',
             ],
             [
                 'id'    => 72,
-                'title' => 'network_alert_edit',
+                'title' => 'pool_management_radiu_show',
             ],
             [
                 'id'    => 73,
-                'title' => 'network_alert_show',
+                'title' => 'pool_management_radiu_delete',
             ],
             [
                 'id'    => 74,
-                'title' => 'network_alert_delete',
+                'title' => 'pool_management_radiu_access',
             ],
             [
                 'id'    => 75,
-                'title' => 'network_alert_access',
+                'title' => 'pool_management_mikrotik_create',
             ],
             [
                 'id'    => 76,
-                'title' => 'product_management_access',
+                'title' => 'pool_management_mikrotik_edit',
             ],
             [
                 'id'    => 77,
-                'title' => 'product_category_create',
+                'title' => 'pool_management_mikrotik_show',
             ],
             [
                 'id'    => 78,
-                'title' => 'product_category_edit',
+                'title' => 'pool_management_mikrotik_delete',
             ],
             [
                 'id'    => 79,
-                'title' => 'product_category_show',
+                'title' => 'pool_management_mikrotik_access',
             ],
             [
                 'id'    => 80,
-                'title' => 'product_category_delete',
+                'title' => 'ap_manager_access',
             ],
             [
                 'id'    => 81,
-                'title' => 'product_category_access',
+                'title' => 'signal_management_access',
             ],
             [
                 'id'    => 82,
-                'title' => 'product_tag_create',
+                'title' => 'frequency_manager_access',
             ],
             [
                 'id'    => 83,
-                'title' => 'product_tag_edit',
+                'title' => 'signal_manager_access',
             ],
             [
                 'id'    => 84,
-                'title' => 'product_tag_show',
+                'title' => 'ipam_report_access',
             ],
             [
                 'id'    => 85,
-                'title' => 'product_tag_delete',
+                'title' => 'merkezi_sistem_access',
             ],
             [
                 'id'    => 86,
-                'title' => 'product_tag_access',
+                'title' => 'sube_management_access',
             ],
             [
                 'id'    => 87,
-                'title' => 'product_create',
-            ],
-            [
-                'id'    => 88,
-                'title' => 'product_edit',
-            ],
-            [
-                'id'    => 89,
-                'title' => 'product_show',
-            ],
-            [
-                'id'    => 90,
-                'title' => 'product_delete',
-            ],
-            [
-                'id'    => 91,
-                'title' => 'product_access',
-            ],
-            [
-                'id'    => 92,
-                'title' => 'client_management_setting_access',
-            ],
-            [
-                'id'    => 93,
-                'title' => 'currency_create',
-            ],
-            [
-                'id'    => 94,
-                'title' => 'currency_edit',
-            ],
-            [
-                'id'    => 95,
-                'title' => 'currency_show',
-            ],
-            [
-                'id'    => 96,
-                'title' => 'currency_delete',
-            ],
-            [
-                'id'    => 97,
-                'title' => 'currency_access',
-            ],
-            [
-                'id'    => 98,
-                'title' => 'transaction_type_create',
-            ],
-            [
-                'id'    => 99,
-                'title' => 'transaction_type_edit',
-            ],
-            [
-                'id'    => 100,
-                'title' => 'transaction_type_show',
-            ],
-            [
-                'id'    => 101,
-                'title' => 'transaction_type_delete',
-            ],
-            [
-                'id'    => 102,
-                'title' => 'transaction_type_access',
-            ],
-            [
-                'id'    => 103,
-                'title' => 'income_source_create',
-            ],
-            [
-                'id'    => 104,
-                'title' => 'income_source_edit',
-            ],
-            [
-                'id'    => 105,
-                'title' => 'income_source_show',
-            ],
-            [
-                'id'    => 106,
-                'title' => 'income_source_delete',
-            ],
-            [
-                'id'    => 107,
-                'title' => 'income_source_access',
-            ],
-            [
-                'id'    => 108,
-                'title' => 'client_status_create',
-            ],
-            [
-                'id'    => 109,
-                'title' => 'client_status_edit',
-            ],
-            [
-                'id'    => 110,
-                'title' => 'client_status_show',
-            ],
-            [
-                'id'    => 111,
-                'title' => 'client_status_delete',
-            ],
-            [
-                'id'    => 112,
-                'title' => 'client_status_access',
-            ],
-            [
-                'id'    => 113,
-                'title' => 'project_status_create',
-            ],
-            [
-                'id'    => 114,
-                'title' => 'project_status_edit',
-            ],
-            [
-                'id'    => 115,
-                'title' => 'project_status_show',
-            ],
-            [
-                'id'    => 116,
-                'title' => 'project_status_delete',
-            ],
-            [
-                'id'    => 117,
-                'title' => 'project_status_access',
-            ],
-            [
-                'id'    => 118,
-                'title' => 'client_management_access',
-            ],
-            [
-                'id'    => 119,
-                'title' => 'client_create',
-            ],
-            [
-                'id'    => 120,
-                'title' => 'client_edit',
-            ],
-            [
-                'id'    => 121,
-                'title' => 'client_show',
-            ],
-            [
-                'id'    => 122,
-                'title' => 'client_delete',
-            ],
-            [
-                'id'    => 123,
-                'title' => 'client_access',
-            ],
-            [
-                'id'    => 124,
-                'title' => 'project_create',
-            ],
-            [
-                'id'    => 125,
-                'title' => 'project_edit',
-            ],
-            [
-                'id'    => 126,
-                'title' => 'project_show',
-            ],
-            [
-                'id'    => 127,
-                'title' => 'project_delete',
-            ],
-            [
-                'id'    => 128,
-                'title' => 'project_access',
-            ],
-            [
-                'id'    => 129,
-                'title' => 'note_create',
-            ],
-            [
-                'id'    => 130,
-                'title' => 'note_edit',
-            ],
-            [
-                'id'    => 131,
-                'title' => 'note_show',
-            ],
-            [
-                'id'    => 132,
-                'title' => 'note_delete',
-            ],
-            [
-                'id'    => 133,
-                'title' => 'note_access',
-            ],
-            [
-                'id'    => 134,
-                'title' => 'document_create',
-            ],
-            [
-                'id'    => 135,
-                'title' => 'document_edit',
-            ],
-            [
-                'id'    => 136,
-                'title' => 'document_show',
-            ],
-            [
-                'id'    => 137,
-                'title' => 'document_delete',
-            ],
-            [
-                'id'    => 138,
-                'title' => 'document_access',
-            ],
-            [
-                'id'    => 139,
-                'title' => 'transaction_create',
-            ],
-            [
-                'id'    => 140,
-                'title' => 'transaction_edit',
-            ],
-            [
-                'id'    => 141,
-                'title' => 'transaction_show',
-            ],
-            [
-                'id'    => 142,
-                'title' => 'transaction_delete',
-            ],
-            [
-                'id'    => 143,
-                'title' => 'transaction_access',
-            ],
-            [
-                'id'    => 144,
-                'title' => 'client_report_create',
-            ],
-            [
-                'id'    => 145,
-                'title' => 'client_report_edit',
-            ],
-            [
-                'id'    => 146,
-                'title' => 'client_report_show',
-            ],
-            [
-                'id'    => 147,
-                'title' => 'client_report_delete',
-            ],
-            [
-                'id'    => 148,
-                'title' => 'client_report_access',
-            ],
-            [
-                'id'    => 149,
                 'title' => 'task_management_access',
             ],
             [
-                'id'    => 150,
+                'id'    => 88,
                 'title' => 'task_status_create',
             ],
             [
-                'id'    => 151,
+                'id'    => 89,
                 'title' => 'task_status_edit',
             ],
             [
-                'id'    => 152,
+                'id'    => 90,
                 'title' => 'task_status_show',
             ],
             [
-                'id'    => 153,
+                'id'    => 91,
                 'title' => 'task_status_delete',
             ],
             [
-                'id'    => 154,
+                'id'    => 92,
                 'title' => 'task_status_access',
             ],
             [
-                'id'    => 155,
+                'id'    => 93,
                 'title' => 'task_tag_create',
             ],
             [
-                'id'    => 156,
+                'id'    => 94,
                 'title' => 'task_tag_edit',
             ],
             [
-                'id'    => 157,
+                'id'    => 95,
                 'title' => 'task_tag_show',
             ],
             [
-                'id'    => 158,
+                'id'    => 96,
                 'title' => 'task_tag_delete',
             ],
             [
-                'id'    => 159,
+                'id'    => 97,
                 'title' => 'task_tag_access',
             ],
             [
-                'id'    => 160,
+                'id'    => 98,
                 'title' => 'task_create',
             ],
             [
-                'id'    => 161,
+                'id'    => 99,
                 'title' => 'task_edit',
             ],
             [
-                'id'    => 162,
+                'id'    => 100,
                 'title' => 'task_show',
             ],
             [
-                'id'    => 163,
+                'id'    => 101,
                 'title' => 'task_delete',
             ],
             [
-                'id'    => 164,
+                'id'    => 102,
                 'title' => 'task_access',
             ],
             [
-                'id'    => 165,
+                'id'    => 103,
                 'title' => 'tasks_calendar_access',
             ],
             [
-                'id'    => 166,
+                'id'    => 104,
+                'title' => 'nas_manager_create',
+            ],
+            [
+                'id'    => 105,
+                'title' => 'nas_manager_edit',
+            ],
+            [
+                'id'    => 106,
+                'title' => 'nas_manager_show',
+            ],
+            [
+                'id'    => 107,
+                'title' => 'nas_manager_delete',
+            ],
+            [
+                'id'    => 108,
+                'title' => 'nas_manager_access',
+            ],
+            [
+                'id'    => 109,
+                'title' => 'performans_report_access',
+            ],
+            [
+                'id'    => 110,
+                'title' => 'sube_sikayet_access',
+            ],
+            [
+                'id'    => 111,
                 'title' => 'profile_password_edit',
             ],
         ];

@@ -24,7 +24,7 @@ class TaskController extends Controller
     {
         abort_if(Gate::denies('task_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $tasks = Task::with(['status', 'tags', 'assigned_to', 'team', 'media'])->get();
+        $tasks = Task::with(['status', 'tags', 'assigned_to', 'media'])->get();
 
         return view('admin.tasks.index', compact('tasks'));
     }
@@ -67,7 +67,7 @@ class TaskController extends Controller
 
         $assigned_tos = User::all()->pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $task->load('status', 'tags', 'assigned_to', 'team');
+        $task->load('status', 'tags', 'assigned_to');
 
         return view('admin.tasks.edit', compact('statuses', 'tags', 'assigned_tos', 'task'));
     }
@@ -94,7 +94,7 @@ class TaskController extends Controller
     {
         abort_if(Gate::denies('task_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $task->load('status', 'tags', 'assigned_to', 'team');
+        $task->load('status', 'tags', 'assigned_to');
 
         return view('admin.tasks.show', compact('task'));
     }

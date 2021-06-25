@@ -1,43 +1,80 @@
-<form class="sign-up-form" method="POST" action="{{ route('register') }}">
-    @csrf
+@extends('layouts.app')
+@section('content')
 
-    <h2 class="title">Register Now</h2>
-    
-    <div class="input-field">
-        <i class="fas fa-user"></i>
-        <input type="text" placeholder="name"  class="@error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required />
-         {{-- @error('name')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-        @enderror --}}
-    </div>
-    
-    <div class="input-field">
-        <i class="fas fa-envelope"></i>
-        <input id="email" placeholder="Email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-        {{-- @error('email')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-        @enderror --}}
-    </div>
-    
-    <div class="input-field">
-        <i class="fas fa-lock"></i>
-        <input id="password" placeholder="Password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-        {{-- @error('password')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-        @enderror --}}
-    </div>
-    <div class="input-field">
-        <i class="fas fa-lock"></i>
-        <input id="password-confirm" placeholder="Confirm Password" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-    </div>
-    
-    <input type="submit" class="btn" value="Register" />
-    {{-- <p class="social-text">Or Sign up with social platforms</p> --}}
+<div class="row justify-content-center">
+    <div class="col-md-6">
 
-</form>
+        <div class="card mx-4">
+            <div class="card-body p-4">
+
+                <form method="POST" action="{{ route('register') }}">
+                    {{ csrf_field() }}
+                    @if(request()->has('team'))
+                        <input type="hidden" name="team" id="team" value="{{ request()->query('team') }}">
+                    @endif
+                    <h1>{{ trans('panel.site_title') }}</h1>
+                    <p class="text-muted">{{ trans('global.register') }}</p>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-user fa-fw"></i>
+                            </span>
+                        </div>
+                        <input type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" required autofocus placeholder="{{ trans('global.user_name') }}" value="{{ old('name', null) }}">
+                        @if($errors->has('name'))
+                            <div class="invalid-feedback">
+                                {{ $errors->first('name') }}
+                            </div>
+                        @endif
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-envelope fa-fw"></i>
+                            </span>
+                        </div>
+                        <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" required placeholder="{{ trans('global.login_email') }}" value="{{ old('email', null) }}">
+                        @if($errors->has('email'))
+                            <div class="invalid-feedback">
+                                {{ $errors->first('email') }}
+                            </div>
+                        @endif
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-lock fa-fw"></i>
+                            </span>
+                        </div>
+                        <input type="password" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required placeholder="{{ trans('global.login_password') }}">
+                        @if($errors->has('password'))
+                            <div class="invalid-feedback">
+                                {{ $errors->first('password') }}
+                            </div>
+                        @endif
+                    </div>
+
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fa fa-lock fa-fw"></i>
+                            </span>
+                        </div>
+                        <input type="password" name="password_confirmation" class="form-control" required placeholder="{{ trans('global.login_password_confirmation') }}">
+                    </div>
+
+                    <button class="btn btn-block btn-primary">
+                        {{ trans('global.register') }}
+                    </button>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@endsection

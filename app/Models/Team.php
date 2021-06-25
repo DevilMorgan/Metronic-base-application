@@ -23,12 +23,19 @@ class Team extends Model
     protected $fillable = [
         'created_at',
         'updated_at',
-        'sube_sehir',
-        'sube_kodu',
+        'sube_name',
+        'nas_prefix',
+        'ip_block_prfeix',
+        'ticket_prefix',
         'deleted_at',
         'name',
         'owner_id',
     ];
+
+    public function stationSubeStationManagements()
+    {
+        return $this->hasMany(StationManagement::class, 'station_sube_id', 'id');
+    }
 
     public function owner()
     {

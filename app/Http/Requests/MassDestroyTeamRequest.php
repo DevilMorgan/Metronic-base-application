@@ -2,25 +2,38 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Foundation\Http\FormRequest;
 use App\Models\Team;
 use Gate;
-use Illuminate\Foundation\Http\FormRequest;
 use Symfony\Component\HttpFoundation\Response;
 
-class MassDestroyTeamRequest extends FormRequest
+class MassDestroyTeamRequest extends FormRequest  {
+
+
+
+
+
+public function authorize()
 {
-    public function authorize()
-    {
-        abort_if(Gate::denies('team_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+    abort_if(Gate::denies('team_delete'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return true;
-    }
 
-    public function rules()
-    {
-        return [
-            'ids'   => 'required|array',
-            'ids.*' => 'exists:teams,id',
-        ];
-    }
+
+
+return true;
+    
+}
+public function rules()
+{
+    
+
+
+
+return [
+'ids' => 'required|array',
+    'ids.*' => 'exists:teams,id',
+]
+    
+}
+
 }

@@ -17,15 +17,25 @@ class UpdateTeamRequest extends FormRequest
     public function rules()
     {
         return [
-            'sube_sehir' => [
+            'sube_name' => [
                 'string',
                 'nullable',
             ],
-            'sube_kodu' => [
+            'nas_prefix' => [
+                'string',
+                'min:2',
+                'max:6',
                 'nullable',
-                'integer',
-                'min:-2147483648',
-                'max:2147483647',
+            ],
+            'ip_block_prfeix' => [
+                'string',
+                'nullable',
+            ],
+            'ticket_prefix' => [
+                'string',
+                'min:2',
+                'max:6',
+                'nullable',
             ],
             'name' => [
                 'string',

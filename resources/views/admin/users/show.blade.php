@@ -49,6 +49,14 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.user.fields.two_factor') }}
+                        </th>
+                        <td>
+                            <input type="checkbox" disabled="disabled" {{ $user->two_factor ? 'checked' : '' }}>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.user.fields.approved') }}
                         </th>
                         <td>
@@ -61,22 +69,6 @@
                         </th>
                         <td>
                             <input type="checkbox" disabled="disabled" {{ $user->verified ? 'checked' : '' }}>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            {{ trans('cruds.user.fields.two_factor') }}
-                        </th>
-                        <td>
-                            <input type="checkbox" disabled="disabled" {{ $user->two_factor ? 'checked' : '' }}>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            {{ trans('cruds.user.fields.username') }}
-                        </th>
-                        <td>
-                            {{ $user->username }}
                         </td>
                     </tr>
                     <tr>
@@ -106,14 +98,14 @@
     </div>
     <ul class="nav nav-tabs" role="tablist" id="relationship-tabs">
         <li class="nav-item">
-            <a class="nav-link" href="#owner_teams" role="tab" data-toggle="tab">
-                {{ trans('cruds.team.title') }}
+            <a class="nav-link" href="#user_user_alerts" role="tab" data-toggle="tab">
+                {{ trans('cruds.userAlert.title') }}
             </a>
         </li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" role="tabpanel" id="owner_teams">
-            @includeIf('admin.users.relationships.ownerTeams', ['teams' => $user->ownerTeams])
+        <div class="tab-pane" role="tabpanel" id="user_user_alerts">
+            @includeIf('admin.users.relationships.userUserAlerts', ['userAlerts' => $user->userUserAlerts])
         </div>
     </div>
 </div>
