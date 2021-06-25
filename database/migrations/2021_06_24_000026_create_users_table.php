@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('verification_token')->nullable();
             $table->string('password')->nullable();
             $table->boolean('two_factor')->default(0)->nullable();
-
+            $table->string('username')->nullable();
             $table->string('two_factor_code')->nullable();
             $table->string('remember_token')->nullable();
             $table->datetime('two_factor_expires_at')->nullable();

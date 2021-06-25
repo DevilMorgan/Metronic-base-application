@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
                 'verified'           => 1,
                 'verified_at'        => '2021-06-24 18:50:50',
                 'two_factor_code'    => '',
-
+                'username'           => '',
                 'verification_token' => '',
             ],
         ];
